@@ -2,7 +2,7 @@ const chatLog = document.getElementById('chat-log');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
-const apiKey = 'JOUW_OPENAI_API_KEY'; // Vervang dit door je eigen API-sleutel
+const apiKey = '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'; // Vervang dit door je eigen API-sleutel
 
 sendButton.addEventListener('click', sendMessage);
 
