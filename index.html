@@ -1,63 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chat App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI</title>
 </head>
 <body>
-  <h1>Chat App</h1>
-  
-  <div id="userList">
-    <h2>Gebruikers</h2>
-    <ul id="users">
-      <!-- Hier worden gebruikers weergegeven -->
-    </ul>
-    <input type="text" id="userCode" placeholder="Genese user code">
-    <button onclick="addUser()">Voeg Gebruiker Toe</button>
-  </div>
-
-  <div id="chatBox">
-    <h2>Chatbox</h2>
-    <div id="chatMessages">
-      <!-- Hier worden chatberichten weergegeven -->
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
     </div>
-    <input type="text" id="message" placeholder="Typ een bericht">
-    <button onclick="sendMessage()">Verstuur Bericht</button>
-  </div>
-
-  <script>
-    const users = [];
-    
-    function addUser() {
-      const userCodeInput = document.getElementById("userCode");
-      const userCode = userCodeInput.value;
-      users.push(userCode);
-      userCodeInput.value = "";
-      updateUserList();
-    }
-    
-    function updateUserList() {
-      const userList = document.getElementById("users");
-      userList.innerHTML = "";
-      for (const user of users) {
-        const listItem = document.createElement("li");
-        listItem.textContent = user;
-        userList.appendChild(listItem);
-      }
-    }
-    
-    function sendMessage() {
-      const messageInput = document.getElementById("message");
-      const message = messageInput.value;
-      displayMessage(message);
-      messageInput.value = "";
-    }
-    
-    function displayMessage(message) {
-      const chatMessages = document.getElementById("chatMessages");
-      const messageDiv = document.createElement("div");
-      messageDiv.textContent = message;
-      chatMessages.appendChild(messageDiv);
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
